@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toko HP Murah - Landing Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #111827;
+    }
+
+    .logo span {
+      color: #16a34a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: #4b5563;
+    }
+
+    .nav-links a:hover {
+      color: #16a34a;
+    }
+
+    .btn-wa-small {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-wa-small:hover {
+      opacity: 0.9;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 40px 0 32px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: #dcfce7;
+      color: #14532d;
+      margin-bottom: 12px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #16a34a;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 18px;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin-bottom: 22px;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    .hero-list span.check {
+      margin-top: 2px;
+      font-size: 1rem;
+      color: #16a34a;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .btn-wa {
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-wa:hover {
+      opacity: 0.9;
+    }
+
+    .btn-ghost {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: #374151;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .hero-image {
+      background: linear-gradient(135deg, #ecfdf3, #f9fafb);
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 25px rgba(15, 118, 110, 0.1);
+    }
+
+    .hero-phone {
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      padding: 12px;
+      background: #ffffff;
+    }
+
+    .hero-phone-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+      color: #4b5563;
+    }
+
+    .signal-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .signal-dots span {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: #9ca3af;
+    }
+
+    .hero-phone-main {
+      border-radius: 12px;
+      background: #f9fafb;
+      padding: 10px;
+    }
+
+    .hero-phone-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .hero-phone-text {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .hero-phone-tag {
+      display: inline-flex;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 0.7rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-phone-products {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .hero-phone-card {
+      border-radius: 10px;
+      background: #ffffff;
+      padding: 6px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .hero-phone-card-name {
+      font-size: 0.75rem;
+      margin-bottom: 2px;
+    }
+
+    .hero-phone-card-price {
+      font-size: 0.75rem;
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    .hero-phone-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      margin-top: 4px;
+    }
+
+    .hero-phone-btn {
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #16a34a;
+      color: #ffffff;
+      border: none;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    /* Section titles */
+    .section {
+      padding: 24px 0;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .feature-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .feature-text {
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* Products */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-image {
+      height: 160px;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #4b5563;
+    }
+
+    .product-body {
+      padding: 12px 14px 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .product-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .product-spec {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .product-price {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #16a34a;
+      margin-top: 4px;
+    }
+
+    .product-footer {
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .badge-stock {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-size: 0.7rem;
+    }
+
+    .btn-product-wa {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: none;
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    /* Testimonial */
+    .testimonial-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .testimonial-quote {
+      font-size: 0.9rem;
+      color: #374151;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 22px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #16a34a, #22c55e);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .cta-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .cta-text {
+      font-size: 0.9rem;
+      max-width: 420px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-cta-wa {
+      padding: 11px 20px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #15803d;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cta-note {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+      padding: 14px 0 24px;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    /* Floating WA button */
+    .wa-float {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 20;
+    }
+
+    .wa-float a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 1.3rem;
+      box-shadow: 0 10px 25px rgba(22, 163, 74, 0.6);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .cta {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating WhatsApp -->
+  <div class="wa-float">
+    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20HP%20di%20Toko%20HP%20Murah" target="_blank" aria-label="Chat via WhatsApp">
+      💬
+    </a>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">Toko<span>HPMurah</span></div>
+        <div class="nav-links">
+          <a href="#produk">Produk</a>
+          <a href="#keunggulan">Keunggulan</a>
+          <a href="#testimoni">Testimoni</a>
+        </div>
+        <button class="btn-wa-small" onclick="window.open('https://wa.me/6281234567890','_blank')">
+          Chat WhatsApp
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Ready kirim ke seluruh Indonesia
+          </div>
+          <h1 class="hero-title">
+            HP Second Berkualitas, Harga Ramah Kantong.
+          </h1>
+          <p class="hero-subtitle">
+            Pilihan HP second kondisi istimewa, cocok untuk kebutuhan harian, kerja, maupun kuliah. Semua dicek
+            fungsinya sebelum dikirim.
+          </p>
+          <ul class="hero-list">
+            <li><span class="check">✓</span> Garansi tukar unit 3 hari setelah barang diterima*</li>
+            <li><span class="check">✓</span> Bisa COD area kota tertentu (tanya admin)</li>
+            <li><span class="check">✓</span> Pembayaran via transfer bank / e-wallet</li>
+          </ul>
+          <div class="hero-actions">
+            <button class="btn-wa" onclick="window.open('https://wa.me/6281234567890?text=Halo,%20saya%20mau%20tanya%20stok%20HP','_blank')">
+              💬 Chat Sekarang
+            </button>
+            <button class="btn-ghost" onclick="document.getElementById('produk').scrollIntoView({behavior:'smooth'})">
+              Lihat daftar produk ↓
+            </button>
+          </div>
+          <p class="hero-note">
+            *S&K berlaku. Silakan tanya admin untuk detail lebih lengkap.
+          </p>
+        </div>
+
+        <div class="hero-image">
+          <div class="hero-phone">
+            <div class="hero-phone-header">
+              <div class="signal-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div>tokohpmurah.id</div>
+            </div>
+            <div class="hero-phone-main">
+              <div class="hero-phone-tag">Landing page toko HP</div>
+              <div class="hero-phone-title">Toko HP Murah</div>
+              <div class="hero-phone-text">
+                Semua produk dalam satu link. Tinggal klik, langsung chat WhatsApp untuk order.
+              </div>
+
+              <div class="hero-phone-products">
+                <div class="hero-phone-card">
+                  <div class="hero-phone-card-name">iPhone 11 64GB</div>
+                  <div class="hero-phone-card-price">Rp4.250.000</div>
+                </div>
+                <div class="hero-phone-card">
+                  <div class="hero-phone-card-name">Samsung A52</div>
+                  <div class="hero-phone-card-price">Rp2.850.000</div>
+                </div>
+                <div class="hero-phone-card">
+                  <div class="hero-phone-card-name">Redmi Note 10</div>
+                  <div class="hero-phone-card-price">Rp1.950.000</div>
+                </div>
+                <div class="hero-phone-card">
+                  <div class="hero-phone-card-name">Realme C25</div>
+                  <div class="hero-phone-card-price">Rp1.450.000</div>
+                </div>
+              </div>
+
+              <div class="hero-phone-footer">
+                <span>Update stok tiap hari</span>
+                <button class="hero-phone-btn">
+                  Chat WA
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section class="section" id="keunggulan">
+      <div class="container">
+        <h2 class="section-title">Kenapa beli di Toko HP Murah?</h2>
+        <p class="section-subtitle">Kami ingin kamu dapat HP yang pas di kantong dan nyaman dipakai.</p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-title">Cek kondisi menyeluruh</div>
+            <p class="feature-text">
+              Setiap HP kami cek fisik, layar, baterai, kamera, dan fungsi penting lain sebelum di-upload.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">Harga realistis</div>
+            <p class="feature-text">
+              Harga disesuaikan dengan kondisi, bukan asal murah. Kamu tetap dapat kualitas yang layak.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">Respon cepat</div>
+            <p class="feature-text">
+              Admin siap jawab pertanyaan tentang stok, spek, dan rekomendasi HP sesuai kebutuhanmu.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">Pengiriman aman</div>
+            <p class="feature-text">
+              Packing pakai bubble wrap berlapis dan dus agar HP sampai dalam kondisi aman.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUK -->
+    <section class="section" id="produk">
+      <div class="container">
+        <h2 class="section-title">Contoh Produk Terbaru</h2>
+        <p class="section-subtitle">Berikut contoh tampilan daftar produk di landing page toko HP.</p>
+
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              Gambar HP (upload di sini)
+            </div>
+            <div class="product-body">
+              <div class="product-name">iPhone 11 64GB</div>
+              <div class="product-spec">Fullset, baterai 88%, minus halus, siap pakai.</div>
+              <div class="product-price">Rp4.250.000</div>
+              <div class="product-footer">
+                <span class="badge-stock">Stok: 1 unit</span>
+                <button class="btn-product-wa" onclick="window.open('https://wa.me/6285338391953?text=Halo,%20saya%20mau%20tanya%20iPhone%2011','_blank')">
+                  Tanya via WA
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              Gambar HP (upload di sini)
+            </div>
+            <div class="product-body">
+              <div class="product-name">Samsung A52</div>
+              <div class="product-spec">RAM 8/128GB, layar mulus, kamera jernih.</div>
+              <div class="product-price">Rp2.850.000</div>
+              <div class="product-footer">
+                <span class="badge-stock">Stok: 2 unit</span>
+                <button class="btn-product-wa" onclick="window.open('https://wa.me/6285338391953?text=Halo,%20saya%20mau%20tanya%20Samsung%20A52','_blank')">
+                  Tanya via WA
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              Gambar HP (upload di sini)
+            </div>
+            <div class="product-body">
+              <div class="product-name">Redmi Note 10</div>
+              <div class="product-spec">RAM 6/128GB, baterai awet, cocok harian.</div>
+              <div class="product-price">Rp1.950.000</div>
+              <div class="product-footer">
+                <span class="badge-stock">Stok: 3 unit</span>
+                <button class="btn-product-wa" onclick="window.open('https://wa.me/6285338391953?text=Halo,%20saya%20mau%20tanya%20Redmi%20Note%2010','_blank')">
+                  Tanya via WA
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              Gambar HP (upload di sini)
+            </div>
+            <div class="product-body">
+              <div class="product-name">Realme C25</div>
+              <div class="product-spec">Cocok pelajar, baterai besar, kondisi mulus.</div>
+              <div class="product-price">Rp1.450.000</div>
+              <div class="product-footer">
+                <span class="badge-stock">Stok: 1 unit</span>
+                <button class="btn-product-wa" onclick="window.open('https://wa.me/6285338391953?text=Halo,%20saya%20mau%20tanya%20Realme%20C25','_blank')">
+                  Tanya via WA
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section class="section" id="testimoni">
+      <div class="container">
+        <h2 class="section-title">Testimoni Pembeli</h2>
+        <p class="section-subtitle">Contoh testimoni yang bisa kamu tampilkan di landing page.</p>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            “HP sampai dengan aman, sesuai deskripsi, baterai masih awet. Admin ramah dan jawab pertanyaan dengan jelas.
+            Recommended banget belanja di sini!”
+          </p>
+          <div class="testimonial-name">Rizky – Jakarta</div>
+          <div class="testimonial-role">Beli iPhone 11 64GB</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <div class="cta-title">Tertarik dengan salah satu HP?</div>
+            <p class="cta-text">
+              Klik tombol di bawah ini untuk langsung chat dengan admin. Tanyakan stok, nego harga, atau minta
+              rekomendasi HP sesuai budget kamu.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <button class="btn-cta-wa" onclick="window.open('https://wa.me/6285338391953?text=Halo,%20saya%20tertarik%20dengan%20HP%20di%20Toko%20HP%20Murah','_blank')">
+              💬 Chat Admin via WhatsApp
+            </button>
+            <div class="cta-note">Fast respon di jam kerja 09.00 – 21.00 WIB.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Amae STore – Contoh landing page untuk penjual HP online.
+  </footer>
+</body>
+</html>
