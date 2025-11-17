@@ -360,16 +360,6 @@
       flex-direction: column;
     }
 
-    .product-image {
-      height: 160px;
-      background: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      color: #4b5563;
-    }
-
     .product-body {
       padding: 12px 14px 12px;
       flex: 1;
@@ -419,6 +409,44 @@
       color: #ffffff;
       font-size: 0.8rem;
       cursor: pointer;
+    }
+
+    /* GALLERY FOTO PRODUK */
+    .product-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .product-image-main {
+      height: 160px;
+      background: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .product-image-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-thumbs {
+      display: flex;
+      gap: 6px;
+    }
+
+    .product-thumbs img {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .product-thumbs img:hover {
+      border-color: #16a34a;
     }
 
     /* Testimonial */
@@ -607,10 +635,10 @@
               <div class="signal-dots">
                 <span></span><span></span><span></span>
               </div>
-              <div>tokohpmurah.id</div>
+              <div>amaestore.id</div>
             </div>
             <div class="hero-phone-main">
-              <div class="hero-phone-tag">Landing page toko HP</div>
+              <div class="hero-phone-tag">AMAE STORE</div>
               <div class="hero-phone-title">Toko HP Murah</div>
               <div class="hero-phone-text">
                 Semua produk dalam satu link. Tinggal klik, langsung chat WhatsApp untuk order.
@@ -651,7 +679,7 @@
     <!-- KEUNGGULAN -->
     <section class="section" id="keunggulan">
       <div class="container">
-        <h2 class="section-title">Kenapa beli di Amae Store?</h2>
+        <h2 class="section-title">Kenapa beli di Amae Store</h2>
         <p class="section-subtitle">Kami ingin kamu dapat HP yang pas di kantong dan nyaman dipakai.</p>
 
         <div class="features-grid">
@@ -687,12 +715,24 @@
     <section class="section" id="produk">
       <div class="container">
         <h2 class="section-title">Contoh Produk Terbaru</h2>
-        <p class="section-subtitle">Berikut contoh tampilan daftar produk di landing page toko HP.</p>
+        <p class="section-subtitle">Berikut contoh tampilan daftar produk di Amae Store.</p>
 
         <div class="products-grid">
+          <!-- PRODUK 1 -->
           <div class="product-card">
-            <div class="product-image">
-              Gambar HP (upload di sini)
+            <div class="product-gallery">
+              <div class="product-image-main">
+                <!-- Ganti src dengan foto kamu -->
+                <img id="prod1-main" src="images/hp1-1.png" alt="Contoh foto iPhone 11">
+              </div>
+              <div class="product-thumbs">
+                <img src="images/hp1-1.png" alt="HP 1 foto 1"
+                     onclick="setMainImage('prod1-main', this.src)">
+                <img src="images/hp1-2.png" alt="HP 1 foto 2"
+                     onclick="setMainImage('prod1-main', this.src)">
+                <img src="images/hp1-3.png" alt="HP 1 foto 3"
+                     onclick="setMainImage('prod1-main', this.src)">
+              </div>
             </div>
             <div class="product-body">
               <div class="product-name">iPhone 11 64GB</div>
@@ -707,9 +747,20 @@
             </div>
           </div>
 
+          <!-- PRODUK 2 -->
           <div class="product-card">
-            <div class="product-image">
-              Gambar HP (upload di sini)
+            <div class="product-gallery">
+              <div class="product-image-main">
+                <img id="prod2-main" src="images/hp2-1.png" alt="Contoh foto Samsung A52">
+              </div>
+              <div class="product-thumbs">
+                <img src="images/hp2-1.png" alt="HP 2 foto 1"
+                     onclick="setMainImage('prod2-main', this.src)">
+                <img src="images/hp2-2.png" alt="HP 2 foto 2"
+                     onclick="setMainImage('prod2-main', this.src)">
+                <img src="images/hp2-3.png" alt="HP 2 foto 3"
+                     onclick="setMainImage('prod2-main', this.src)">
+              </div>
             </div>
             <div class="product-body">
               <div class="product-name">Samsung A52</div>
@@ -724,9 +775,20 @@
             </div>
           </div>
 
+          <!-- PRODUK 3 -->
           <div class="product-card">
-            <div class="product-image">
-              Gambar HP (upload di sini)
+            <div class="product-gallery">
+              <div class="product-image-main">
+                <img id="prod3-main" src="images/hp3-1.png" alt="Contoh foto Redmi Note 10">
+              </div>
+              <div class="product-thumbs">
+                <img src="images/hp3-1.png" alt="HP 3 foto 1"
+                     onclick="setMainImage('prod3-main', this.src)">
+                <img src="images/hp3-2.png" alt="HP 3 foto 2"
+                     onclick="setMainImage('prod3-main', this.src)">
+                <img src="images/hp3-3.png" alt="HP 3 foto 3"
+                     onclick="setMainImage('prod3-main', this.src)">
+              </div>
             </div>
             <div class="product-body">
               <div class="product-name">Redmi Note 10</div>
@@ -741,9 +803,20 @@
             </div>
           </div>
 
+          <!-- PRODUK 4 -->
           <div class="product-card">
-            <div class="product-image">
-              Gambar HP (upload di sini)
+            <div class="product-gallery">
+              <div class="product-image-main">
+                <img id="prod4-main" src="images/hp4-1.png" alt="Contoh foto Realme C25">
+              </div>
+              <div class="product-thumbs">
+                <img src="images/hp4-1.png" alt="HP 4 foto 1"
+                     onclick="setMainImage('prod4-main', this.src)">
+                <img src="images/hp4-2.png" alt="HP 4 foto 2"
+                     onclick="setMainImage('prod4-main', this.src)">
+                <img src="images/hp4-3.png" alt="HP 4 foto 3"
+                     onclick="setMainImage('prod4-main', this.src)">
+              </div>
             </div>
             <div class="product-body">
               <div class="product-name">Realme C25</div>
@@ -757,6 +830,7 @@
               </div>
             </div>
           </div>
+
         </div>
 
       </div>
@@ -802,7 +876,17 @@
   </main>
 
   <footer>
-    © 2025 Amae STore – Contoh landing page untuk penjual HP online.
+    © 2025 Amae Store – Contoh landing page untuk penjual HP online.
   </footer>
+
+  <!-- SCRIPT GALLERY -->
+  <script>
+    function setMainImage(id, src) {
+      var img = document.getElementById(id);
+      if (img) {
+        img.src = src;
+      }
+    }
+  </script>
 </body>
 </html>
